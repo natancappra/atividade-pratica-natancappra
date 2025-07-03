@@ -23,7 +23,7 @@ body {
 
 /* --- Cabeçalho e Navegação (Cor Branca Revertida) --- */
 header {
-    background-color: var(--cor-fundo-card); /* Fundo branco, como você pediu */
+    background-color: var(--cor-fundo-card); /* Fundo branco */
     border-bottom: 1px solid var(--cor-borda-sutil);
     padding: 15px 0;
     position: sticky; top: 0; z-index: 1000;
@@ -47,7 +47,7 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Tipografia e Alinhamentos (Estilo LinkedIn) --- */
+/* --- Tipografia e Alinhamentos --- */
 h2, h3 {
     text-align: left; /* Títulos alinhados à esquerda */
     color: var(--cor-texto-principal); /* Cor mais escura para títulos */
@@ -61,12 +61,12 @@ h2 .fa-solid {
     color: var(--cor-primaria-links);
 }
 
-/* --- Foto de Perfil (Borda Cinza) --- */
+/* --- Foto de Perfil --- */
 .foto-perfil {
     display: block; width: 150px; height: 150px;
     border-radius: 50%; object-fit: cover; 
     margin: 0 auto 30px;
-    border: 4px solid var(--cor-borda-sutil); /* Borda cinza sutil, como pediu */
+    border: 4px solid var(--cor-borda-sutil); /* Borda cinza sutil */
 }
 
 /* --- Botões do Portfólio --- */
@@ -101,7 +101,7 @@ h2 .fa-solid {
     color: #fff;
 }
 
-/* --- Formulário e Rodapé (sem grandes mudanças) --- */
+/* --- Formulário e Rodapé --- */
 form { max-width: 600px; margin: auto; text-align: left;}
 form label { display: block; margin-top: 10px; font-weight: bold; }
 form input, form textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid var(--cor-borda-sutil); border-radius: 5px; }
@@ -113,7 +113,7 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
 .redes-sociais a { color: var(--cor-texto-secundario); text-decoration: none; margin: 0 10px; font-weight: bold; }
 .redes-sociais a:hover { color: var(--cor-primaria-links); }
 
-/* --- Novo Layout para a Seção "Sobre Mim" --- */
+/* --- Seção "Sobre Mim" --- */
 
 .sobre-container {
     display: flex; /* A MÁGICA DO FLEXBOX! */
@@ -126,7 +126,7 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
     text-align: center; /* Centraliza a foto e o nome dentro da coluna */
 }
 
-/* Ajuste na foto de perfil para o novo layout */
+/* Ajuste na foto de perfil */
 .sobre-imagem .foto-perfil {
     width: 200px;
     height: 200px;
