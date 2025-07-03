@@ -155,33 +155,36 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
 
 /* --- Design Responsivo para Telas Pequenas (Celulares) --- */
 
+/* --- Design Responsivo para Telas Pequenas (Celulares) --- */
+
 @media (max-width: 768px) {
 
     /* Ajusta o container principal para telas menores */
     .container {
-        width: 90%; /* Ocupa um pouco mais da tela */
+        width: 90%;
     }
 
     /* Muda o layout da seção 'Sobre Mim' para uma coluna única */
     .sobre-container {
-        flex-direction: column; /* Itens ficarão um em cima do outro */
-        align-items: center;    /* Centraliza os itens no container */
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Centraliza todo o texto da seção 'Sobre Mim' no celular para um visual mais limpo */
-    .sobre-texto {
-        text-align: center;
-    }
-
-    /* Garante que o H2 que movemos para dentro do texto também se centralize */
+    /* O texto dentro da seção 'Sobre Mim' voltará a ser alinhado à esquerda,
+       como nas outras seções, removendo a regra de centralização que tínhamos antes. */
     .sobre-texto h2 {
-        text-align: center;
+        text-align: center; /* Mantém apenas o título centralizado acima do texto */
     }
 
-    /* Ajusta o menu de navegação para telas pequenas */
+    /* AJUSTE DO MENU: Alinha os itens à esquerda */
+    nav ul {
+        text-align: left; /* NOVO: Alinha a lista à esquerda */
+        padding-left: 20px; /* NOVO: Adiciona um respiro na lateral */
+    }
+
     nav ul li {
-        display: block;       /* Faz cada item do menu ocupar uma linha */
-        margin: 15px 0;       /* Adiciona espaçamento vertical entre eles */
+        display: block;
+        margin: 15px 0;
     }
 
 }
