@@ -15,29 +15,42 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--cor-fundo-pagina);
-    color: var(--cor-texto-secundario); /* Cor padrão para parágrafos */
+    color: var(--cor-texto-secundario);
 }
 
 /* --- Layout Principal --- */
 .container { max-width: 960px; margin: 20px auto; padding: 0 15px; }
 
-/* --- Cabeçalho e Navegação (Cor Branca Revertida) --- */
+/* --- Cabeçalho e Navegação --- */
 header {
-    background-color: var(--cor-fundo-card); /* Fundo branco */
+    background-color: var(--cor-fundo-card);
     border-bottom: 1px solid var(--cor-borda-sutil);
     padding: 15px 0;
     position: sticky; top: 0; z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-nav ul { list-style: none; text-align: center; }
-nav ul li { display: inline; margin: 0 20px; }
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.logo { font-size: 24px; color: var(--cor-texto-principal); }
+nav ul { list-style: none; }
+nav ul li { display: inline-block; margin: 0 15px; }
 nav ul li a {
     color: var(--cor-texto-secundario);
     text-decoration: none;
-    font-size: 16px; font-weight: 600;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 nav ul li a:hover { color: var(--cor-primaria-links); }
+
+#menu-hamburger { display: none; font-size: 24px; cursor: pointer; }
 
 /* --- Estilo dos "Cards" e Conteúdo Interno --- */
 section {
@@ -48,26 +61,20 @@ section {
 }
 
 /* --- Tipografia e Alinhamentos --- */
-h2, h3 {
-    text-align: left; /* Títulos alinhados à esquerda */
-    color: var(--cor-texto-principal); /* Cor mais escura para títulos */
-}
+h2, h3 { text-align: left; color: var(--cor-texto-principal); }
 h2 { margin-bottom: 25px; font-size: 24px; }
 h3 { margin-bottom: 10px; font-size: 20px; }
+h2 .fa-solid { margin-right: 10px; color: var(--cor-primaria-links); }
 
-/* Estilo para os ícones dos títulos */
-h2 .fa-solid {
-    margin-right: 10px;
-    color: var(--cor-primaria-links);
-}
-
-/* --- Foto de Perfil --- */
-.foto-perfil {
-    display: block; width: 150px; height: 150px;
-    border-radius: 50%; object-fit: cover; 
-    margin: 0 auto 30px;
-    border: 4px solid var(--cor-borda-sutil); /* Borda cinza sutil */
-}
+/* --- Seção Sobre Mim --- */
+.foto-perfil { display: block; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 30px; border: 4px solid var(--cor-borda-sutil); }
+.sobre-container { display: flex; align-items: flex-start; gap: 30px; }
+.sobre-imagem { flex-basis: 250px; text-align: center; }
+.sobre-imagem .foto-perfil { width: 200px; height: 200px; margin-bottom: 15px; }
+.sobre-imagem h3 { text-align: center; margin-bottom: 5px; }
+.cargo-atual { font-size: 14px; color: var(--cor-texto-secundario); text-align: center; }
+.sobre-texto { flex: 1; }
+.sobre-texto h2 { margin-bottom: 20px; }
 
 /* --- Botões do Portfólio --- */
 .botoes-projeto { margin-top: 20px; }
@@ -75,31 +82,18 @@ h2 .fa-solid {
     display: inline-block;
     padding: 10px 20px;
     margin-right: 10px;
+    margin-bottom: 10px; /* Adiciona espaço caso eles quebrem a linha naturalmente */
     text-decoration: none;
-    border-radius: 20px; /* Bordas bem arredondadas, estilo "pílula" */
+    border-radius: 20px;
     font-weight: bold;
     text-align: center;
     transition: all 0.3s ease;
 }
 .btn .fa-brands, .btn .fa-solid { margin-right: 8px; }
-
-/* Botão Primário (Sólido) */
-.btn-primario {
-    background-color: var(--cor-primaria-links);
-    color: #fff;
-}
+.btn-primario { background-color: var(--cor-primaria-links); color: #fff; }
 .btn-primario:hover { background-color: #004182; }
-
-/* Botão Secundário (Contorno) */
-.btn-secundario {
-    background-color: #fff;
-    color: var(--cor-primaria-links);
-    border: 1px solid var(--cor-primaria-links);
-}
-.btn-secundario:hover {
-    background-color: var(--cor-primaria-links);
-    color: #fff;
-}
+.btn-secundario { background-color: #fff; color: var(--cor-primaria-links); border: 1px solid var(--cor-primaria-links); }
+.btn-secundario:hover { background-color: var(--cor-primaria-links); color: #fff; }
 
 /* --- Formulário e Rodapé --- */
 form { max-width: 600px; margin: auto; text-align: left;}
@@ -107,61 +101,36 @@ form label { display: block; margin-top: 10px; font-weight: bold; }
 form input, form textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid var(--cor-borda-sutil); border-radius: 5px; }
 form button { width: 100%; padding: 12px; margin-top: 20px; background-color: var(--cor-primaria-links); color: #fff; border: none; border-radius: 20px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background-color 0.3s ease; }
 form button:hover { background-color: #004182; }
-.texto-centralizado { text-align: center; }
+.texto-centralizado, h2.texto-centralizado { text-align: center !important; }
 footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--cor-texto-secundario); }
 .redes-sociais { margin-bottom: 15px; }
 .redes-sociais a { color: var(--cor-texto-secundario); text-decoration: none; margin: 0 10px; font-weight: bold; }
 .redes-sociais a:hover { color: var(--cor-primaria-links); }
 
-/* --- Seção "Sobre Mim" --- */
-
-.sobre-container {
-    display: flex; /* FLEXBOX! */
-    align-items: flex-start; /* Alinha os itens no topo */
-    gap: 30px; /* Espaço entre a foto e o texto */
-}
-
-.sobre-imagem {
-    flex-basis: 250px; /* Lrgura base para a coluna da imagem */
-    text-align: center; /* Centraliza a foto e o nome dentro da coluna */
-}
-
-/* Ajuste na foto de perfil */
-.sobre-imagem .foto-perfil {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
-}
-
-.sobre-imagem h3 {
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.cargo-atual {
-    font-size: 14px;
-    color: var(--cor-texto-secundario);
-    text-align: center;
-}
-
-.sobre-texto {
-    flex: 1; /* Cluna de texto ocupa todo o espaço restante */
-}
-
-/* Traz o H2 para dentro da coluna de texto */
-.sobre-texto h2 {
-    margin-bottom: 20px;
-}
-
-/* --- Design Responsivo para Telas Pequenas (Celulares) --- */
-
-/* --- Design Responsivo para Telas Pequenas (Celulares) --- */
-
+/* --- Design Responsivo (VERSÃO FINAL E COMPLETA) --- */
 @media (max-width: 768px) {
+    #menu-hamburger { display: block; }
+    #nav-menu { position: absolute; top: 72px; right: 0; background: var(--cor-fundo-card); width: 60%; height: 100vh; transform: translateX(100%); transition: transform 0.3s ease-in-out; box-shadow: -2px 0 5px rgba(0,0,0,0.1); }
+    #nav-menu.active { transform: translateX(0); }
+    nav ul li { display: block; text-align: center; margin: 30px 0; }
+    .container { width: 95%; }
+    .sobre-container { flex-direction: column; align-items: center; }
 
-    /* Ajusta o container principal para telas menores */
-    .container {
-        width: 90%;
+    /* Força os botões do portfólio a ocuparem a linha inteira e se empilharem */
+    .botoes-projeto .btn {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Remove a margem de baixo do último botão */
+    .botoes-projeto .btn:last-child {
+        margin-bottom: 0;
+    }
+}
+        text-align: center;
+        margin: 30px 0;
     }
 
     /* Muda o layout da seção 'Sobre Mim' para uma coluna única */
@@ -169,22 +138,18 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
         flex-direction: column;
         align-items: center;
     }
-
-    /* O texto dentro da seção 'Sobre Mim' voltará a ser alinhado à esquerda,
-       como nas outras seções, removendo a regra de centralização que tínhamos antes. */
-    .sobre-texto h2 {
-        text-align: center; /* Mantém apenas o título centralizado acima do texto */
+    
+    /* --- CORREÇÃO FINAL PARA OS BOTÕES --- */
+    /* Força os botões do portfólio a ocuparem a linha inteira e se empilharem */
+    .botoes-projeto .btn {
+        display: block;         /* Faz o botão ocupar a largura toda, forçando a quebra de linha */
+        width: 100%;            /* Garante que ele ocupe todo o espaço do card */
+        margin-right: 0;        /* Remove a margem lateral que não é mais necessária */
+        margin-bottom: 10px;    /* Adiciona um espaço abaixo de cada botão */
     }
 
-    /* AJUSTE DO MENU: Alinha os itens à esquerda */
-    nav ul {
-        text-align: left; /* NOVO: Alinha a lista à esquerda */
-        padding-left: 20px; /* NOVO: Adiciona um respiro na lateral */
+    /* Remove a margem de baixo do último botão para não criar espaço extra */
+    .botoes-projeto .btn:last-child {
+        margin-bottom: 0;
     }
-
-    nav ul li {
-        display: block;
-        margin: 15px 0;
-    }
-
 }
