@@ -152,3 +152,36 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
 .sobre-texto h2 {
     margin-bottom: 20px;
 }
+
+/* --- Design Responsivo para Telas Pequenas (Celulares) --- */
+
+@media (max-width: 768px) {
+
+    /* Ajusta o container principal para telas menores */
+    .container {
+        width: 90%; /* Ocupa um pouco mais da tela */
+    }
+
+    /* Muda o layout da seção 'Sobre Mim' para uma coluna única */
+    .sobre-container {
+        flex-direction: column; /* Itens ficarão um em cima do outro */
+        align-items: center;    /* Centraliza os itens no container */
+    }
+
+    /* Centraliza todo o texto da seção 'Sobre Mim' no celular para um visual mais limpo */
+    .sobre-texto {
+        text-align: center;
+    }
+
+    /* Garante que o H2 que movemos para dentro do texto também se centralize */
+    .sobre-texto h2 {
+        text-align: center;
+    }
+
+    /* Ajusta o menu de navegação para telas pequenas */
+    nav ul li {
+        display: block;       /* Faz cada item do menu ocupar uma linha */
+        margin: 15px 0;       /* Adiciona espaçamento vertical entre eles */
+    }
+
+}
