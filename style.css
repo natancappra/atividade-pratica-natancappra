@@ -116,13 +116,13 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
 /* --- Seção "Sobre Mim" --- */
 
 .sobre-container {
-    display: flex; /* A MÁGICA DO FLEXBOX! */
+    display: flex; /* FLEXBOX! */
     align-items: flex-start; /* Alinha os itens no topo */
-    gap: 30px; /* Cria um espaço entre a foto e o texto */
+    gap: 30px; /* Espaço entre a foto e o texto */
 }
 
 .sobre-imagem {
-    flex-basis: 250px; /* Define uma largura base para a coluna da imagem */
+    flex-basis: 250px; /* Lrgura base para a coluna da imagem */
     text-align: center; /* Centraliza a foto e o nome dentro da coluna */
 }
 
@@ -145,7 +145,7 @@ footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--
 }
 
 .sobre-texto {
-    flex: 1; /* Faz a coluna de texto ocupar todo o espaço restante */
+    flex: 1; /* Cluna de texto ocupa todo o espaço restante */
 }
 
 /* Traz o H2 para dentro da coluna de texto */
