@@ -1,0 +1,154 @@
+/* --- :root para Variáveis de Cor --- */
+:root {
+    --cor-fundo-pagina: #f3f2ef; 
+    --cor-fundo-card: #ffffff; 
+    --cor-texto-principal: #1f1f1f; 
+    --cor-texto-secundario: #5e5e5e; 
+    --cor-primaria-links: #0a66c2; 
+    --cor-borda-sutil: #e0e0e0;
+}
+
+/* --- Estilos Gerais e Resets --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-pagina);
+    color: var(--cor-texto-secundario); /* Cor padrão para parágrafos */
+}
+
+/* --- Layout Principal --- */
+.container { max-width: 960px; margin: 20px auto; padding: 0 15px; }
+
+/* --- Cabeçalho e Navegação (Cor Branca Revertida) --- */
+header {
+    background-color: var(--cor-fundo-card); /* Fundo branco, como você pediu */
+    border-bottom: 1px solid var(--cor-borda-sutil);
+    padding: 15px 0;
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+nav ul { list-style: none; text-align: center; }
+nav ul li { display: inline; margin: 0 20px; }
+nav ul li a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 16px; font-weight: 600;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover { color: var(--cor-primaria-links); }
+
+/* --- Estilo dos "Cards" e Conteúdo Interno --- */
+section {
+    background-color: var(--cor-fundo-card);
+    padding: 30px; margin-bottom: 20px;
+    border-radius: 8px; border: 1px solid var(--cor-borda-sutil);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Tipografia e Alinhamentos (Estilo LinkedIn) --- */
+h2, h3 {
+    text-align: left; /* Títulos alinhados à esquerda */
+    color: var(--cor-texto-principal); /* Cor mais escura para títulos */
+}
+h2 { margin-bottom: 25px; font-size: 24px; }
+h3 { margin-bottom: 10px; font-size: 20px; }
+
+/* Estilo para os ícones dos títulos */
+h2 .fa-solid {
+    margin-right: 10px;
+    color: var(--cor-primaria-links);
+}
+
+/* --- Foto de Perfil (Borda Cinza) --- */
+.foto-perfil {
+    display: block; width: 150px; height: 150px;
+    border-radius: 50%; object-fit: cover; 
+    margin: 0 auto 30px;
+    border: 4px solid var(--cor-borda-sutil); /* Borda cinza sutil, como pediu */
+}
+
+/* --- Botões do Portfólio --- */
+.botoes-projeto { margin-top: 20px; }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 20px; /* Bordas bem arredondadas, estilo "pílula" */
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.btn .fa-brands, .btn .fa-solid { margin-right: 8px; }
+
+/* Botão Primário (Sólido) */
+.btn-primario {
+    background-color: var(--cor-primaria-links);
+    color: #fff;
+}
+.btn-primario:hover { background-color: #004182; }
+
+/* Botão Secundário (Contorno) */
+.btn-secundario {
+    background-color: #fff;
+    color: var(--cor-primaria-links);
+    border: 1px solid var(--cor-primaria-links);
+}
+.btn-secundario:hover {
+    background-color: var(--cor-primaria-links);
+    color: #fff;
+}
+
+/* --- Formulário e Rodapé (sem grandes mudanças) --- */
+form { max-width: 600px; margin: auto; text-align: left;}
+form label { display: block; margin-top: 10px; font-weight: bold; }
+form input, form textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid var(--cor-borda-sutil); border-radius: 5px; }
+form button { width: 100%; padding: 12px; margin-top: 20px; background-color: var(--cor-primaria-links); color: #fff; border: none; border-radius: 20px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background-color 0.3s ease; }
+form button:hover { background-color: #004182; }
+.texto-centralizado { text-align: center; }
+footer { text-align: center; padding: 30px 10px; margin-top: 20px; color: var(--cor-texto-secundario); }
+.redes-sociais { margin-bottom: 15px; }
+.redes-sociais a { color: var(--cor-texto-secundario); text-decoration: none; margin: 0 10px; font-weight: bold; }
+.redes-sociais a:hover { color: var(--cor-primaria-links); }
+
+/* --- Novo Layout para a Seção "Sobre Mim" --- */
+
+.sobre-container {
+    display: flex; /* A MÁGICA DO FLEXBOX! */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 30px; /* Cria um espaço entre a foto e o texto */
+}
+
+.sobre-imagem {
+    flex-basis: 250px; /* Define uma largura base para a coluna da imagem */
+    text-align: center; /* Centraliza a foto e o nome dentro da coluna */
+}
+
+/* Ajuste na foto de perfil para o novo layout */
+.sobre-imagem .foto-perfil {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.sobre-imagem h3 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.cargo-atual {
+    font-size: 14px;
+    color: var(--cor-texto-secundario);
+    text-align: center;
+}
+
+.sobre-texto {
+    flex: 1; /* Faz a coluna de texto ocupar todo o espaço restante */
+}
+
+/* Traz o H2 para dentro da coluna de texto */
+.sobre-texto h2 {
+    margin-bottom: 20px;
+}
